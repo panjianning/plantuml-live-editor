@@ -27,7 +27,7 @@ npm run build
 npm run preview
 ```
 
-Then open http://localhost:8000/puml
+Then open http://localhost:3000/puml
 
 Note: If you want to use the root directory, edit the `kit.paths.base` variable in svelte.config.js.
 
