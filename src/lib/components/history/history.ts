@@ -9,19 +9,19 @@ const MAX_AUTO_HISTORY_LENGTH = 30;
 export const historyModeStore: Writable<HistoryType> = persist(
 	writable('manual'),
 	localStorage(),
-	'autoHistoryMode'
+	'plantumlAutoHistoryMode'
 );
 
 const autoHistoryStore: Writable<HistoryEntry[]> = persist(
 	writable([]),
 	localStorage(),
-	'autoHistoryStore'
+	'plantumlAutoHistoryStore'
 );
 
 const manualHistoryStore: Writable<HistoryEntry[]> = persist(
 	writable([]),
 	localStorage(),
-	'manualHistoryStore'
+	'plantumlManualHistoryStore'
 );
 
 export const loaderHistoryStore: Writable<HistoryEntry[]> = writable([] as HistoryEntry[]);

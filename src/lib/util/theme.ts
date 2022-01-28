@@ -12,7 +12,7 @@ export const themeStore: Writable<ThemeConfig> = persist(
 		isDark: false
 	}),
 	localStorage(),
-	'themeStore'
+	'plantumlThemeStore'
 );
 
 const darkThemes = [

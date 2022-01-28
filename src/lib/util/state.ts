@@ -32,7 +32,7 @@ const urlParseFailedState = `graph TD
     G --> |"No :("| H(Try using the Timeline tab in History <br/>from same browser you used to create the diagram.)
     click D href "https://github.com/mermaid-js/mermaid-live-editor/issues/new?assignees=&labels=bug&template=bug_report.md&title=Broken%20link" "Raise issue"`;
 
-export const codeStore = persist(writable(defaultState), localStorage(), 'codeStore');
+export const codeStore = persist(writable(defaultState), localStorage(), 'plantumlCodeStore');
 export const serializedState: Readable<string> = derived([codeStore], ([code], set) => {
 	set(serializeState(code));
 });

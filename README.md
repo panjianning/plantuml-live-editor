@@ -27,15 +27,16 @@ npm run build
 npm run preview
 ```
 
-Then open http://localhost:3000/puml
-
-Note: If you want to use the root directory, edit the `kit.paths.base` variable in svelte.config.js.
-
 or
 
 ``` bash
 npm run dev
 ```
+
+Then open http://localhost:3000/puml
+
+Note: If you want to use the root directory, edit the `kit.paths.base` variable in svelte.config.js and replace
+`'/puml/'` to `'/'` in app.html.
 
 ## Static Deployment
 
