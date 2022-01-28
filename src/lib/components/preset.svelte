@@ -18,6 +18,14 @@ else
   -->[Ending process] (*)
 endif
 @enduml`,
+        'Sequence diagram':`@startuml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: Another authentication Response
+@enduml
+`,
 		'Class Diagram': `@startuml
 
 !theme sketchy-outline

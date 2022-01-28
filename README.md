@@ -20,23 +20,6 @@ You can try out a live version [here](https://panjianning.com/puml/).
 npm install -g global cross-env
 npm install
 ```
-## Development
-
-```bash
-npm run build
-npm run preview
-```
-
-or
-
-``` bash
-npm run dev
-```
-
-Then open http://localhost:3000/puml
-
-Note: If you want to use the root directory, edit the `kit.paths.base` variable in svelte.config.js and replace
-`'/puml/'` to `'/'` in app.html.
 
 ## Static Deployment
 
@@ -46,3 +29,16 @@ npm run build
 
 The dist directory contains the generated static files.
 
+Note: If you want to use the root directory, edit the `kit.paths.base` variable in svelte.config.js and replace
+`'/puml/'` with `''` in app.html.
+
+
+## Development
+
+**Edit app.html first: rplace`'/puml/'` with `''`**
+
+``` bash
+npm run dev
+```
+
+Then open http://localhost:3000
