@@ -1,6 +1,6 @@
 # PlantUML Live Editor
 
-Edit, preview and share mermaid charts/diagrams.
+Edit, preview and share plantuml charts/diagrams.
 
 based on [mermaid-live-editor](https://github.com/mermaid-js/mermaid-live-editor)
 
