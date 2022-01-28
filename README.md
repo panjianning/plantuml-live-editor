@@ -1,12 +1,8 @@
-[![Mermaid Live Editor](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/detailed/2ckppp/master&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/2ckppp/runs) [![Join our Slack!](https://img.shields.io/static/v1?message=join%20chat&color=9cf&logo=slack&label=slack)](https://join.slack.com/t/mermaid-talk/shared_invite/enQtNzc4NDIyNzk4OTAyLWVhYjQxOTI2OTg4YmE1ZmJkY2Y4MTU3ODliYmIwOTY3NDJlYjA0YjIyZTdkMDMyZTUwOGI0NjEzYmEwODcwOTE)[![Netlify Status](https://api.netlify.com/api/v1/badges/27fa023d-7c73-4a3f-9791-b3b657a47100/deploy-status)](https://app.netlify.com/sites/mermaidjs/deploys)
-
-# Contributors are welcome!
-
-If you want to speed up the progress for mermaid-live-editor, join the slack channel and contact knsv.
-
-# mermaid-live-editor
+# PlantUML Live Editor
 
 Edit, preview and share mermaid charts/diagrams.
+
+based on [mermaid-live-editor](https://github.com/mermaid-js/mermaid-live-editor)
 
 ## Features
 
@@ -17,55 +13,35 @@ Edit, preview and share mermaid charts/diagrams.
 
 ## Live demo
 
-You can try out a live version [here](https://mermaid.live/).
-
-## Docker
-
-### Run published image
-
-```bash
-docker run --publish 8000:80 ghcr.io/mermaid-js/mermaid-live-editor
-```
-
-### To configure renderer URL
-
-When building, Set the Environment variable MERMAID_RENDERER_URL to the rendering service.
-Default is `https://mermaid.ink`
-
-### To configure Kroki Instance URL
-
-When building, Set the Environment variable MERMAID_KROKI_RENDERER_URL to your Kroki instance.
-Default is `https://kroki.io`
-
-### Development
-
-```bash
-docker compose up --build
-```
-
-Then open http://localhost:8000
+You can try out a live version [here](https://panjianning.com/puml/).
 
 ## Setup
-
-[Volta](https://volta.sh) is used for managing node and yarn versions.
-
-This project is set up using [Yarn](https://classic.yarnpkg.com/en/docs/getting-started):
-
+```bash
+npm install -g global cross-env
+npm install
 ```
-yarn install
-```
-
 ## Development
 
+```bash
+npm run build
+npm run preview
 ```
-yarn dev -- --open
+
+Then open http://localhost:8000/puml
+
+Note: If you want to use the root directory, edit the `kit.paths.base` variable in svelte.config.js.
+
+or
+
+``` bash
+npm run dev
 ```
 
-This app is created with Svelte Kit.
+## Static Deployment
 
-## Release
+```bash
+npm run build
+```
 
-When a PR is created targeting master, it will be built and deployed by Netlify.
-The URL will be indicated in a Comment in the PR.
+The dist directory contains the generated static files.
 
-Once the PR is merged, it will automatically be released.

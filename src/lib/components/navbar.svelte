@@ -17,23 +17,15 @@
 	const links: Link[] = [
 		{
 			title: 'Documentation',
-			href: 'https://mermaid-js.github.io/mermaid/#/n00b-gettingStarted'
+			href: 'https://plantuml.com/'
 		},
 		{
-			title: 'Tutorial',
-			href: 'https://github.com/mermaid-js/mermaid/blob/develop/docs/Tutorials.md'
-		},
-		{
-			title: 'Mermaid',
-			href: 'https://github.com/mermaid-js/mermaid'
-		},
-		{
-			title: 'CLI',
-			href: 'https://github.com/mermaid-js/mermaid-cli'
+			title: 'PlantUML',
+			href: 'https://github.com/plantuml/plantuml'
 		},
 		{
 			title: '',
-			href: 'https://github.com/mermaid-js/mermaid-live-editor',
+			href: 'https://github.com/panjianning/plantuml-live-editor',
 			icon: 'fab fa-github fa-lg'
 		}
 	];
@@ -42,7 +34,7 @@
 <div class="navbar mb-2 shadow-lg bg-primary">
 	<div class="flex-1 px-2 mx-2">
 		<span class="text-lg font-bold">
-			<a href="/">Mermaid<span class="text-xs font-thin">v{version}</span> Live Editor</a>
+			<a href="/">PlantUML Live Editor</a>
 		</span>
 	</div>
 	<label for="menu-toggle" class="pointer-cursor lg:hidden block"

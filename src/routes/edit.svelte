@@ -124,7 +124,7 @@
 	<Navbar />
 	<div class="flex-1 flex overflow-hidden">
 		<div class="hidden md:flex flex-col" id="editorPane" style="width: 40%">
-			<Card on:select={tabSelectHandler} {tabs} isCloseable={false} title="Mermaid">
+			<Card on:select={tabSelectHandler} {tabs} isCloseable={false} title="">
 				<div slot="actions">
 					<div class="flex flex-row items-center">
 						{#if !$codeStore.autoSync}
