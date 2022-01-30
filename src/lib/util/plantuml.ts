@@ -2,8 +2,8 @@ export const getPlantUMLUrl = (code: string): Map<string, string> =>
 {
     // deflate are defined in app.html https://www.panjianning.com/mystatic/js/rawdeflate.js
     const pumlCode = encode64(deflate(unescape(encodeURIComponent(code))));
-    const pngUrl = `http://www.plantuml.com/plantuml/png/${pumlCode}`;
-    const svgUrl = `http://www.plantuml.com/plantuml/svg/${pumlCode}`;
+    const pngUrl = `https://www.plantuml.com/plantuml/png/${pumlCode}`;
+    const svgUrl = `https://www.plantuml.com/plantuml/svg/${pumlCode}`;
     return new Map([["png", pngUrl], ["svg", svgUrl]])
 }
 
