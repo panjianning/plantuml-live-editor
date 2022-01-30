@@ -14,7 +14,7 @@
     import type monaco from 'monaco-editor';
     import type {EditorUpdateEvent, State, Tab} from '$lib/types';
     import {base} from '$app/paths';
-    import {plantumlFromGdbStack} from '$lib/util/gdbstack';
+    import {plantumlFromGdbBackTrace} from '$lib/util/gdbbacktrace';
 
     serializedState; // Weird fix for error > serializedState is not defined. Treeshaking?
     let selectedMode = 'code';
@@ -23,7 +23,7 @@
         config: 'json'
     };
     let text = '';
-    let gdbStackText = "";
+    let gdbBackTraceText = "";
     let language: 'mermaid' | 'json' = 'mermaid';
     let errorMarkers: monaco.editor.IMarkerData[] = [];
     $: language = languageMap[selectedMode];
@@ -58,8 +58,8 @@
         }
     ];
 
-    const gdbStackHandler = () => {
-        let code = plantumlFromGdbStack(gdbStackText);
+    const gdbBackTraceHandler = () => {
+        let code = plantumlFromGdbBackTrace(gdbBackTraceText);
         handleCodeUpdate(code);
         if (selectedMode === "code") {
             $codeStore.updateEditor = true;
@@ -165,28 +165,26 @@
             </Card>
 
             <div class="-mt-2">
-
-
                 <Card title="Tools" isOpen={false}>
                     <div class="flex gap-2 flex-wrap p-2">
                         <label for="my-modal-2"
-                               class="btn btn-primary  normal-case btn-sm modal-button">GdbStack</label>
+                               class="btn btn-primary  normal-case btn-sm modal-button">GDB backtrace</label>
                         <input type="checkbox" id="my-modal-2" class="modal-toggle">
                         <div class="modal" id="modal-gbdstack">
                             <div class="modal-box">
                                 <p>Generate plantuml code from output of gdb `bt` command.</p>
                                 <br>
-                                <textarea bind:value={gdbStackText} style="width: 100%; height: 200px"
+                                <textarea bind:value={gdbBackTraceText} style="width: 100%; height: 200px"
                                           class="bg-base-200"/>
                                 <div class="modal-action">
-                                    <label for="my-modal-2" class="btn btn-primary" on:click={() => gdbStackHandler()}>OK</label>
+                                    <label for="my-modal-2" class="btn btn-primary"
+                                           on:click={() => gdbBackTraceHandler()}>OK</label>
                                     <label for="my-modal-2" class="btn">Cancel</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </Card>
-
                 <Preset/>
                 <History/>
                 <Actions/>
