@@ -8,6 +8,7 @@
 	import {deserializeState} from  '$lib/util/serde';
 	import { toBase64 } from 'js-base64';
 	import moment from 'moment';
+	import {getPlantUMLUrl} from '$lib/util/plantuml'
 
 	type Exporter = (context: CanvasRenderingContext2D, image: HTMLImageElement) => () => void;
 
@@ -143,9 +144,9 @@
 	serializedState.subscribe((encodedState: string) => {
 	    let state = deserializeState(encodedState);
 	    if (state) {
-	        let pumlCode = encode64(deflate(unescape(encodeURIComponent(state.code))));
-	        iUrl = `http://www.plantuml.com/plantuml/png/${pumlCode}`;
-	     	svgUrl = `http://www.plantuml.com/plantuml/svg/${pumlCode}`;
+	    	const urls = getPlantUMLUrl(state.code);
+	        iUrl = urls.get('png');
+	     	svgUrl = urls.get('svg');
 	     	mdCode = `[![](${iUrl})](${window.location.protocol}//${window.location.host}${window.location.pathname}#${encodedState})`;
 	    }
 	});

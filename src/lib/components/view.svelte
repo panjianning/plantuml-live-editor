@@ -2,6 +2,7 @@
 	import { errorStore } from '$lib/util/error';
 
 	import { codeStore } from '$lib/util/state';
+	import {getPlantUMLUrl} from '$lib/util/plantuml'
 	import { onMount } from 'svelte';
 	import mermaid from 'mermaid';
 
@@ -29,9 +30,8 @@
 					config = state.mermaid;
 					const scroll = view.parentElement.scrollTop;
 					delete container.dataset.processed;
-	                let pumlCode = encode64(deflate(unescape(encodeURIComponent(code))));
-	                let svgUrl = `http://www.plantuml.com/plantuml/svg/${pumlCode}`;
-                    container.innerHTML = `<img id="canvas" src="${svgUrl}">`;
+					const urls = getPlantUMLUrl(code);
+                    container.innerHTML = `<img id="canvas" src="${urls.get('svg')}">`;
 					view.parentElement.scrollTop = scroll;
 					error = false;
 				} else if (manualUpdate) {

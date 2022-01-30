@@ -3,6 +3,17 @@
 	import Card from '$lib/components/card/card.svelte';
 
 	const samples = {
+		'Mind Map':`@startmindmap
+
+* Animal
+** Dog
+*** 1
+*** 2
+** Cat
+*** 1
+*** 2
+*** 3
+@endmindmap`,
 		'Flow Chart': `@startuml
 
 !theme sketchy-outline

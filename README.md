@@ -4,6 +4,12 @@ Edit, preview and share plantuml charts/diagrams.
 
 based on [mermaid-live-editor](https://github.com/mermaid-js/mermaid-live-editor)
 
+## Live demo
+
+You can try out a live version [here](https://panjianning.com/puml/).
+
+[![](./images/plantuml-live-editor.png)](https://www.panjianning.com/puml/edit/#pako:eNptkTFPwzAQhf-KdXMzIJgyoCJoy4JASrea4YgvbYTtC44tUVX97zhODGmF5MG-e_e-J98JalYEJSx7j84Ho6WVtsP6E_ckJFRsSGwch06COEkrxPN2-yYKsVu3rvfikU3Hlqx_H3q7B8v-QO6ifB4cbaREu9fUTX59NlyPfhXVbNW14TVFFMX9MDHZ1pqDGm12q280nSZxk5nSKvT4gf1AfjlWXzojG9Yq5pCwPbS9iMccp1pWDOhRdJuCnNOYQzN4rZnnulS9y7IJ_c9XpOwXMWePsTlj_t2n1i9G2iVZlVYFCzDkDLYqrjAFkhCphiSU8aqowaC9hBgrSkMXP4RWqvXsoGxQ97QADJ6ro62h9C5QFj21uI_AsXj-AUlvuwQ)
+
 ## Features
 
 - Edit and preview flowcharts, sequence diagrams, gantt diagrams in real time.
@@ -53,11 +59,6 @@ will generate:
 
 [![](http://www.plantuml.com/plantuml/png/SoWkIImgAStDuU9KqD3ILD3LjLDGoatCp5C22e0vyG6LyQ5vcHM-o885bI0ryRbOn8fAy-8BAaioyh7A9EVdvYRcfS2b0Yg3WAB1cRa5EQd19KMPUUbkEOdfnUZoM6H0fkNc0qroICrB0Ne00000)](https://www.panjianning.com/puml/edit/#pako:eNp1j8GqwkAMRX-lZOUT_YEuxMXTnSAWdwMldGIdmGTKNAMO4r-_qfIWit2Fe04S7h26YAlq2I6KURN7I0arxfKnWq83lQFGJwae4Stoj7k9i7sdPsGQJ7flmTwmaYes1zBLu8CMYt_wMZ8KaRwPnhqNTvq9x3785szQ6TKH59UtiS0NYQVMsby1pffdSFUsvRKTgbqMli6YvE4Lj6KmwaLSzjoNEeoL-pFWgElDk6WDWmOif-nXYR-RX-HjD9fDdho)
 
-
-## Live demo
-
-You can try out a live version [here](https://panjianning.com/puml/).
-
 ## Setup
 ```bash
 npm install -g global cross-env
@@ -72,13 +73,10 @@ npm run build
 
 The dist directory contains the generated static files.
 
-Note: If you want to use the root directory, edit the `kit.paths.base` variable in svelte.config.js and replace
-`'/puml/'` with `''` in app.html.
+Note: If you want to use the root directory, edit the `kit.paths.base` variable in svelte.config.js
 
 
 ## Development
-
-**Edit app.html first: rplace`'/puml/'` with `''`**
 
 ``` bash
 npm run dev
