@@ -147,7 +147,7 @@
 	    	const urls = getPlantUMLUrl(state.code);
 	        iUrl = urls.get('png');
 	     	svgUrl = urls.get('svg');
-	     	mdCode = `[![](${iUrl})](${window.location.protocol}//${window.location.host}${window.location.pathname}#${encodedState})`;
+	     	mdCode = `[![](${svgUrl})](${window.location.protocol}//${window.location.host}${window.location.pathname}#${encodedState})`;
 	    }
 	});
 </script>
