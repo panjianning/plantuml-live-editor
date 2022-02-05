@@ -19,12 +19,12 @@
     serializedState; // Weird fix for error > serializedState is not defined. Treeshaking?
     let selectedMode = 'code';
     const languageMap = {
-        code: 'mermaid',
+        code: 'apex',
         config: 'json'
     };
     let text = '';
     let gdbBackTraceText = "";
-    let language: 'mermaid' | 'json' = 'mermaid';
+    let language: 'apex' | 'json' = 'apex';
     let errorMarkers: monaco.editor.IMarkerData[] = [];
     $: language = languageMap[selectedMode];
     $: {
